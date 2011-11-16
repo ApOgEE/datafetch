@@ -1,0 +1,14 @@
+<project name="APOCSVParser" default="build" basedir=".">
+	<property name="src" value="${basedir}/src" />
+	<property name="tmp" value="${basedir}/tmp" />
+	
+	<target name="build">
+		<mkdir dir="${tmp}" />
+		<javac debug="true" srcdir="${src}" destdir="${tmp}" />
+		<jar destfile="APOCSVParser.jar" basedir="${tmp}">
+            <manifest>
+	            <attribute name="Main-class" value="APOCSVParser.CSVParser"/>
+            </manifest>
+        </jar>
+	</target>
+</project>

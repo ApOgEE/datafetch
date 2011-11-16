@@ -1,0 +1,24 @@
+<project name="FetchData" default="build" basedir=".">
+	<property name="src" value="${basedir}/src" />
+	<property name="lib" value="${basedir}/lib" />
+	<property name="tmp" value="${basedir}/tmp" />
+
+    <path id="classpath">
+        <fileset dir="${lib}"/>
+    </path>
+	
+	<target name="build">
+		<mkdir dir="${tmp}" />
+		<javac debug="true" srcdir="${src}" destdir="${tmp}">
+			<classpath refid="classpath"/>
+		</javac>
+			
+		<jar destfile="fetchdata.jar" basedir="${tmp}">
+            <manifest>
+	            <attribute name="Main-class" value="apogee.Fetcher"/>
+	            <attribute name="Class-Path" value="lib/APOCSVParser.jar"/>
+            </manifest>
+            
+        </jar>
+	</target>
+</project>
