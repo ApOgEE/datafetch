@@ -1,6 +1,6 @@
 # APOGEE Java Class Exercise 
 
-**datafetch** is my simple exercise for creating and importing class in java.
+**datafetch** is my simple exercise for creating and importing class library in java.
 
 Use this command in linux to build the jar:
 $ ant 
